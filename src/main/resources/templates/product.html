@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <th:block th:include="~{fragments/header}"></th:block>
+
+</head>
+<body>
+<div class="container-fluid">
+
+    <header>
+        <th:block th:include="~{fragments/navbar}"></th:block>
+    </header>
+
+    <main class="mt-3">
+        <h1 class="text-center text-dark">Add Product</h1>
+        <hr class="hr-2 bg-dark w-25">
+        <form id="add-product-form" class="form w-25 mx-auto" action="/products/add" method="post" enctype="multipart/form-data"><input type="hidden" name="_csrf" value="c686cd14-a7f9-4216-8009-c093b7d3df86">
+            <div class="form-group">
+                <label for="add-product-name" class="font-weight-bold">Name</label>
+                <input type="text" class="form-control text-center" id="add-product-name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="add-product-description" class="font-weight-bold">Description</label>
+                <textarea name="description" id="add-product-description" cols="41" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="add-product-price" class="font-weight-bold">Price</label>
+                <input type="number" step="any" class="form-control text-center" id="add-product-price" name="price">
+            </div>
+            <div class="form-group">
+                <label for="add-product-categories" class="font-weight-bold">Categories</label>
+                <select multiple="" class="form-control" id="add-product-categories" name="categories">
+                    <option selected="" disabled="">--- Select Categories ---</option>
+                    <option value="17723e44-cbae-431b-9c2b-0e8d53cfe0b9">Technology</option><option value="9ec24bc6-c082-4514-8fde-e8a745f38935">Domestic</option><option value="bb1e9332-2637-4919-a882-cbd209e46721">Health</option><option value="e6270466-a887-4eee-910b-1f511162706f">Fashion</option></select>
+            </div>
+            <div class="form-group">
+                <label for="add-product-image" class="font-weight-bold">Image</label>
+                <input type="file" class="form-control-file" id="add-product-image" name="image">
+            </div>
+            <hr class="hr-2 bg-dark w-25">
+            <div class="button-holder d-flex justify-content-center">
+                <button type="submit" class="btn btn-success">Add Product</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="mt-3">
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+
+</div>
+
+
+</body>
+</html>
